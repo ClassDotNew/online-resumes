@@ -1,19 +1,21 @@
-<h1>Resumes Index</h1>
-<h3>Below is a list of each student's resume:</h3>
+<h1>Index of Student Resumes</h1>
+
+<% if @students.count == 0%>
+  <h3> There are no resumes available for view: </h3>
+<% elsif @students.count == 1%>
+  <h3> There is <%= @students.count %> resume available for view: </h3>
+<% elsif @students.count > 1 %>
+  <h3> There are <%= @students.count %> resumes available for view: </h3>
+<% end %>
 
 <% @students.each do |student| %>
-  <p>Name: <%= student["last_name"] %>, <%= student["first_name"] %></p>
-  <p>Linkedin: <%= student["linkedin_url"] %></p>
-  <p>Resume website: <%= student["online_resume_url"] %></p>
-  <p>Github: <%= student["github_url"] %></p>
-  <p>Skills: <%= student["skills"] %></p>
-  <p>Educations: <%= student["educations"].each do |education| %></p>
-    <p>Dates: <%= education["start_date"] %> - <%= education["end_date"] %></p>
-    <p>Job Title: <%= education["job_title"] %>
-    <p>Company: <%= education["company_name"] %>
-    <p>Details: <%= education["details"] %>
+  <p>Photo: <img src="<%= student["photo"] %>"></p>
+  <p>Name: <%= student["lastName"] %>, <%= student["firstName"] %></p>
+  <p>Email: <%= student["email"] %></p>
+  <p>Linkedin: <%= student["linkedinUrl"] %></p>
+  <p>Twitter: <%= student["twitterHandle"] %></p>
+  <p>Resume website: <%= student["onlineResume_url"] %></p>
+  <p>Github: <%= student["githubUrl"] %></p>
     <hr>
-  <% end %>
-  <p>Experiences: <%= student["experiences"] %></p>
 <% end %>
 
