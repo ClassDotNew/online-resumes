@@ -2,7 +2,7 @@ class ResumesController < ApplicationController
 
   def index
 
-  	@resumes = Unirest.get().body
+  	@students = Unirest.get().body
 
   	render 'index.html.erb'
   end
