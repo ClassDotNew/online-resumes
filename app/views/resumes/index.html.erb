@@ -1,10 +1,19 @@
-<h1>Resumes#index</h1>
-<p>Find me in app/views/resumes/index.html.erb</p>
+<h1>Resumes Index</h1>
+<h3>Below is a list of each student's resume:</h3>
 
 <% @students.each do |student| %>
-<p><%= student["last_name"], <%= student["first_name"] %></p>
-<p><%= student["linkedin_url"] %></p>
-<p><%= student["online_resume_url"] %></p>
-<p><%= student["github_url"] %></p>
+  <p>Name: <%= student["last_name"] %>, <%= student["first_name"] %></p>
+  <p>Linkedin: <%= student["linkedin_url"] %></p>
+  <p>Resume website: <%= student["online_resume_url"] %></p>
+  <p>Github: <%= student["github_url"] %></p>
+  <p>Skills: <%= student["skills"] %></p>
+  <p>Educations: <%= student["educations"].each do |education| %></p>
+    <p>Dates: <%= education["start_date"] %> - <%= education["end_date"] %></p>
+    <p>Job Title: <%= education["job_title"] %>
+    <p>Company: <%= education["company_name"] %>
+    <p>Details: <%= education["details"] %>
+    <hr>
+  <% end %>
+  <p>Experiences: <%= student["experiences"] %></p>
 <% end %>
 
