@@ -12,7 +12,7 @@
   <% if student["photo"] %>
   <p><img src="<%= student["photo"] %>"></p>
   <% end %>
-  <p>Name: <a href="/resumes/<%= student["id"] %>"><%= student["lastName"] %>, <%= student["firstName"] %></a></p>
+  <p>Name: <a href="/resumes/<%= student["id"] %>"><%= student["firstName"] %> <%= student["lastName"] %></a></p>
   <p>Email: <%= student["email"] %></p>
   <p>Linkedin: <a href="https://www.<%= student["linkedinUrl"] %>" target="_blank"><%= student["linkedinUrl"] %></a></p>
   <p>Twitter: <a href="https://www.<%= student["twitterHandle"] %>" target="_blank"><%= student["twitterHandle"] %></a></p>

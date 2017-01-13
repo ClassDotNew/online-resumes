@@ -5,7 +5,7 @@ class ResumesController < ApplicationController
   # end
   	def index
       @title = "Student Resumes"
-      @students = Unirest.get('http://localhost:3500/api/v1/students').body
+      @students = Unirest.get('http://localhost:3500/api/v1/students').body.sort_by { |student| student["firstName"]}
       p @students
 
       render 'index.html.erb'
