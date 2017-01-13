@@ -1,8 +1,7 @@
 <h3> Resume </h3>	
 
 <h3> Biographic Data </h3>
-<p>	<%= @student["firstName"] %> </p>
-<p>	<%= @student["lastName"] %> </p>
+<p>	<%= @student["firstName"] + + " " + @student["lastName"]%> </p>
 <p>	<%= @student["email"] %> </p>
 <p>	<%= @student["phoneNumber"] %> </p>
 <p>	<%= @student["bio"] %> </p>
@@ -22,17 +21,16 @@
 <h3> Education </h3>
 
 <% @student["educations"].each do |education| %>
-<p> <%= education["startDate"] %> </p>
-<p> <%= education["endDate"] %> </p>
+<p> <%= education["startDate"] + "-" + education["endDate"]%> </p>
 <p> <%= education["degree"] %> </p>
-<p> <%= education["company_name"] %> </p>
+<p> <%= education["companyName"] %> </p>
+<p> <%= education["details"] %> </p>
 <% end %>
 
 <h3> Experiences </h3>
 
 <% @student["experiences"].each do |experience| %>
-<p> <%= experience ["startDate"] %> </p>
-<p> <%= experience ["endDate"] %> </p>
+<p> <%= experience ["startDate"] + "-" + experience ["endDate"] %> </p>
 <p> <%= experience ["jobTitle"] %> </p>
 <p> <%= experience ["companyName"] %> </p>
 <p> <%= experience ["details"] %> </p>

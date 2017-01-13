@@ -1,7 +1,24 @@
-<h3> List of Students </h3>
+ 
 
- <% @students.each do |student| %>
-<p><%= student["firstName"] + " " + student["lastName"]  %> </p>
-<p> <a href ="/resume/<%= student["id"] %>"> <%=student["email"] %> </a> </p>
-<hr>
-<% end %> 
+<h1>Index of Student Resumes</h1>
+
+<% if @students.count == 0%>
+  <h3> There are no resumes available for view: </h3>
+<% elsif @students.count == 1%>
+  <h3> There is <%= @students.count %> resume available for view: </h3>
+<% elsif @students.count > 1 %>
+  <h3> There are <%= @students.count %> resumes available for view: </h3>
+<% end %><br>
+
+<% @students.each do |student| %>
+  <p>Photo: <img src="<%= student["photo"] %>"></p>
+  <p>Name: <a href="/resumes/<%= student["id"] %>"><%= student["lastName"] %>, <%= student["firstName"] %></a></p>
+  <p>Email: <%= student["email"] %></p>
+  <p>Linkedin: <%= student["linkedinUrl"] %></p>
+  <p>Twitter: <%= student["twitterHandle"] %></p>
+  <p>Resume website: <%= student["onlineResume_url"] %></p>
+  <p>Github: <%= student["githubUrl"] %></p>
+    <hr>
+<% end %>
+
+

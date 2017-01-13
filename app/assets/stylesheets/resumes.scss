@@ -1,3 +1,22 @@
 // Place all the styles related to the Resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: url('seigaiha.png');
+  background-repeat: repeat;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5em;
+}
+
+p {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.2em;
+}
+
+img {
+  width: 10em;
+  height: auto;
+}
