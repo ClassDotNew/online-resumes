@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/list' => 'resumes#index'
-  get '/list/:id' => 'resumes#show'
+  # get '/index' => 'resumes#index'
+  get '/resume/:id' => 'resumes#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

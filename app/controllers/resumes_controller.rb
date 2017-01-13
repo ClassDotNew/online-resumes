@@ -1,17 +1,19 @@
 class ResumesController < ApplicationController
 
-  def index
+  # def index
 
-  	@resumes = Unirest.get().body
+  # 	@students = Unirest.get("http://localhost:3500/api/v1/students").body
 
-  	render 'index.html.erb'
-  end
+  # 	render 'index.html.erb'
+  # end
 
   def show
 
-  	@resume = resume.find(params[:id])
+  	@student = Unirest.get("http://localhost:3500/api/v1/students/#{params[:id]}").body
+
 
   	render 'show.html.erb'
 
   end
+
 end
